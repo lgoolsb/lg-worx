@@ -36,6 +36,7 @@ mmButton.onclick = () => {
 // -------------------------
 
 document.getElementById("sineBlock").onclick = showSineBlock;
+document.getElementById("boltCircle").onclick = showBoltCircle;
 
 // -------------------------
 // Sine Block Screen
@@ -210,3 +211,130 @@ settingsNav.onclick = () => {
     `;
 
 };
+// =========================
+// Bolt Circle Calculator
+// =========================
+
+function showBoltCircle() {
+
+    panel.innerHTML = `
+
+    <div class="card">
+
+        <h2 class="cardTitle">
+
+            Bolt Circle Calculator
+
+        </h2>
+
+        <label>Bolt Circle Diameter</label>
+
+        <input
+            id="bcd"
+            type="number"
+            step="0.0001"
+            placeholder="Example: 4.500">
+
+        <label>Number of Holes</label>
+
+        <input
+            id="holes"
+            type="number"
+            placeholder="Example: 6">
+
+        <label>Starting Angle</label>
+
+        <input
+            id="startAngle"
+            type="number"
+            value="0">
+
+        <button
+            class="orangeButton"
+            id="calculateBoltCircle">
+
+            Calculate
+
+        </button>
+
+        <div
+            id="boltResults"
+            class="result"
+            style="
+                font-size:16px;
+                text-align:left;
+                white-space:pre-line;
+            ">
+
+        </div>
+
+    </div>
+
+    `;
+
+    document
+        .getElementById("calculateBoltCircle")
+        .onclick = calculateBoltCircle;
+
+}
+
+function calculateBoltCircle() {
+
+    const diameter =
+        parseFloat(document.getElementById("bcd").value);
+
+    const holes =
+        parseInt(document.getElementById("holes").value);
+
+    const start =
+        parseFloat(document.getElementById("startAngle").value);
+
+    if (
+        isNaN(diameter) ||
+        isNaN(holes) ||
+        holes < 2
+    ) {
+
+        alert("Enter a valid diameter and at least 2 holes.");
+
+        return;
+
+    }
+
+    const radius = diameter / 2;
+
+    let output = "";
+
+    for (let i = 0; i < holes; i++) {
+
+        const angle =
+            start + (360 / holes) * i;
+
+        const radians =
+            angle * Math.PI / 180;
+
+        const x =
+            radius * Math.cos(radians);
+
+        const y =
+            radius * Math.sin(radians);
+
+        output +=
+
+`Hole ${i + 1}
+
+Angle ${angle.toFixed(2)}°
+
+X = ${x.toFixed(4)}
+
+Y = ${y.toFixed(4)}
+
+--------------------
+
+`;
+
+    }
+
+    document.getElementById("boltResults").innerText = output;
+
+}
