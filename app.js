@@ -162,3 +162,51 @@ ${units}
 `;
 
 }
+// =========================
+// Bottom Navigation
+// =========================
+
+const homeNav = document.getElementById("homeNav");
+const favoritesNav = document.getElementById("favoritesNav");
+const settingsNav = document.getElementById("settingsNav");
+
+function setActiveNav(button){
+
+    document.querySelectorAll(".navButton")
+        .forEach(btn => btn.classList.remove("activeNav"));
+
+    button.classList.add("activeNav");
+
+}
+
+homeNav.onclick = () => {
+
+    setActiveNav(homeNav);
+
+};
+
+favoritesNav.onclick = () => {
+
+    setActiveNav(favoritesNav);
+
+    panel.innerHTML = `
+        <div class="card">
+            <h2 class="cardTitle">Favorites</h2>
+            <p>Your favorite tools will appear here.</p>
+        </div>
+    `;
+
+};
+
+settingsNav.onclick = () => {
+
+    setActiveNav(settingsNav);
+
+    panel.innerHTML = `
+        <div class="card">
+            <h2 class="cardTitle">Settings</h2>
+            <p>More options are coming soon.</p>
+        </div>
+    `;
+
+};

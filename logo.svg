@@ -1,52 +1,55 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
 
-<rect
-x="10"
-y="10"
-width="200"
-height="200"
-rx="40"
-fill="white"/>
+  <rect
+    x="8"
+    y="8"
+    width="240"
+    height="240"
+    rx="48"
+    fill="white"/>
 
-<!-- L -->
+  <!-- Orange L -->
 
-<rect
-x="45"
-y="45"
-width="28"
-height="130"
-fill="#000000"/>
+  <path
+    d="M60 50
+       H90
+       V175
+       H160
+       V205
+       H60
+       Z"
+    fill="#FF7A00"/>
 
-<rect
-x="45"
-y="45"
-width="90"
-height="28"
-fill="#FF7A00"/>
+  <!-- Black G -->
 
-<!-- G -->
+  <path
+    d="
+      M205 70
+      C195 55 175 45 150 45
+      C100 45 70 80 70 128
+      C70 176 100 211 150 211
+      C190 211 218 186 218 150
 
-<path
-d="
-M165 55
-A55 55 0 1 0 165 165
-L165 130
-L120 130
-"
-fill="none"
-stroke="#000000"
-stroke-width="28"
-stroke-linecap="round"
-stroke-linejoin="round"/>
+      H170
+      V122
 
-<!-- Crossbar -->
+      H246
 
-<rect
-x="118"
-y="116"
-width="50"
-height="22"
-rx="8"
-fill="#8D8D8D"/>
+      V205
+
+      H218
+
+      V188
+
+      C202 202 180 210 152 210
+
+      C117 210 96 180 96 128
+
+      C96 76 118 46 152 46
+
+      C173 46 191 55 202 71
+
+      Z"
+    fill="#111111"/>
 
 </svg>
