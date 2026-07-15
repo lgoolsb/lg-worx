@@ -1,0 +1,11 @@
+{
+  "name": "LG WORX",
+  "short_name": "LG WORX",
+  "description": "Professional Machining Tools",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#ff7a00",
+  "orientation": "portrait",
+  "icons": []
+}
